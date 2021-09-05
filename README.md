@@ -1,5 +1,7 @@
 # ExcelColorizeRows
 
+**Group your data visually!**
+
 This script colorizes and thickens borders of Excel rows based on one or more columns.
 
 
