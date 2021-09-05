@@ -9,7 +9,7 @@ This script colorizes and thickens borders of Excel rows based on one or more co
 3. Press `Alt+F11` (`Fn+F11` on Mac) to open VBA Editor
 4. Paste the code
 
-Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` to use it later.
+Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` format to use it later.
 
 
 ## How to use
@@ -28,7 +28,7 @@ You can make some configurations by pressing `Alt+F11` (`Fn+F11` on Mac) and edi
 
 
 ## Example
-![Colorize Sample](https://www.alvandsoft.com/cloud123/excel_colorize.png)
+![Colorize Sample](https://www.alvandsoft.com/cloud123/excel_colorize.png)  
 (Sample data from [contextures.com](https://www.contextures.com/xlsampledata01.html))
 
 In example above, rows are sorted based on columns 2 and 3 and then, colorizing took place on same columns.
