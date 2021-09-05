@@ -15,8 +15,9 @@ Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` format
 ## How to use
 1. Sort your table based on intended columns
 2. Determine columns in the script (See next title)
-3. Press `Alt+F8` (`Fn+F8` on Mac) to open Macro dialog box
-4. Select `...Colorize` and click Run
+3. (Optional) Select entire sheet or table and from `Home` tab, click on `Borders` drop-down and select `All Borders`
+4. Press `Alt+F8` (`Fn+F8` on Mac) to open Macro dialog box
+5. Select `...Colorize` and click Run
 
 
 ## Configuration
