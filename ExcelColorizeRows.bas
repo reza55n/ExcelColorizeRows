@@ -19,6 +19,7 @@ Sub Colorize()
     UseColor = True
         fixed = 150
         random = 105
+        'Total must be less than 256
         
     UseBorder = True
     '############
