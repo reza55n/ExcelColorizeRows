@@ -38,7 +38,7 @@ Sub Colorize()
     UCols = UBound(Cols)
 
     Dim A As Range
-    Set A = ThisWorkbook.ActiveSheet.UsedRange
+    Set A = Me.UsedRange
 
     Dim i As Integer, j As Integer, isChanged As Boolean
     Dim curColor As Long
