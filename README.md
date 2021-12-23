@@ -9,7 +9,8 @@ This script colorizes and thickens borders of Excel rows based on one or more co
 1. Copy the code
 2. Open your document
 3. Press `Alt+F11` (`Fn+F11` on Mac) to open VBA Editor
-4. Paste the code
+4. Open desired sheet's code
+5. Paste the code
 
 Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` format to use it later.
 
@@ -19,7 +20,7 @@ Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` format
 2. Determine columns in the script (See next title)
 3. (Optional) Select entire sheet or table and from `Home` tab, click on `Borders` drop-down and select `All Borders`
 4. Press `Alt+F8` (`Fn+F8` on Mac) to open Macro dialog box
-5. Select `...Colorize` and click Run
+5. Select `[YourSheet].Colorize` and click Run
 
 
 ## Configuration
