@@ -32,7 +32,7 @@ You can make some configurations by pressing `Alt+F11` (`Fn+F11` on Mac) and edi
 
 
 ## Example
-![Colorize Sample](https://www.alvandsoft.com/cloud123/excel_colorize.png)  
+![Colorize Sample](https://www.alvandsoft.com/files/excel_colorize.png)  
 (Sample data from [contextures.com](https://www.contextures.com/xlsampledata01.html))
 
 In example above, rows are sorted based on columns 2 and 3 and then, colorizing took place on same columns.
