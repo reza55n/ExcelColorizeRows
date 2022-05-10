@@ -5,7 +5,7 @@ Sub Colorize()
     Application.ScreenUpdating = False
     Application.Calculation = xlCalculationManual
 
-    Dim UseColor As Boolean, UseBorder As Boolean
+    Dim UseColor As Boolean, UseBorder As Boolean, BreakRows As Boolean
     Dim Cols(), LCols As Integer, UCols As Integer, HeaderRowsCount As Integer
     Dim fixed As Integer
     Dim random As Integer
@@ -22,6 +22,7 @@ Sub Colorize()
         'Total must be less than 256
         
     UseBorder = True
+    BreakRows = False
     '############
     '############
 
@@ -39,9 +40,14 @@ Sub Colorize()
 
     Dim A As Range
     Set A = Me.UsedRange
-
+	' Also `Me` alone is used in code
+	
     Dim i As Integer, j As Integer, isChanged As Boolean
     Dim curColor As Long
+
+	If BreakRows Then
+		Me.ResetAllPageBreaks
+	End If
 
     If UseColor Then
         curColor = RGB(fixed + (Rnd() * random), fixed + (Rnd() * random), fixed + (Rnd() * random))
@@ -61,16 +67,21 @@ Sub Colorize()
             End If
         Next
         
-        If isChanged Then
+		' Second condition is used especially at last row
+        If isChanged And WorksheetFunction.CountA(A.Rows(i + 1)) > 0 Then
             If UseColor Then
                 curColor = RGB(fixed + (Rnd() * random), fixed + (Rnd() * random), fixed + (Rnd() * random))
             End If
             If UseBorder Then
-                a.Rows(i).Borders(xlEdgeBottom).Weight = 4
+                A.Rows(i).Borders(xlEdgeBottom).Weight = 4
+            End If
+            If BreakRows Then
+                Me.HPageBreaks.Add Before:=A.Rows(i + 1)
+                A.Rows(i + 1).PageBreak = xlPageBreakManual
             End If
         Else
             If UseBorder Then
-                a.Rows(i).Borders(xlEdgeBottom).Weight = 2
+                A.Rows(i).Borders(xlEdgeBottom).Weight = 2
             End If
         End If
     Next
@@ -84,4 +95,3 @@ SomeError:
     MsgBox "Error!", vbCritical
 
 End Sub
-
