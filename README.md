@@ -28,13 +28,31 @@ You can make some configurations by pressing `Alt+F11` (`Fn+F11` on Mac) and edi
 - `HeaderRowsCount`: Number of rows at header to exclude from colorizing, default: `1`.
 - **`Cols`: For example, write `Cols = [{5, 6}]` to colorize based on columns 5 and 6 and write `Cols = [{1}]` to colorize only based on first column.**
 - `UseColor`, `UseBorder` (`True`/`False`): Restrict function of script, default: `True`.
+- `BreakRows` (`True`/`False`): Breaks page at columns' change, default: `False`.
 - `fixed`, `random` (Integer, total less than 256): Configure colorizing.
 
 
-## Example
+## Example 1
 ![Colorize Sample](https://www.alvandsoft.com/files/excel_colorize.png)  
 (Sample data from [contextures.com](https://www.contextures.com/xlsampledata01.html))
 
 In example above, rows are sorted based on columns 2 and 3 and then, colorizing took place on same columns.
 
 Configuration: `Cols = [{2, 3}]`
+
+
+## Example 2
+Page break preview:  
+![Colorize Sample 2](https://www.alvandsoft.com/files/excel_colorize2.png)
+
+Configuration:
+
+``` VBA
+Cols = [{2}]
+
+UseColor = False
+    '...
+
+UseBorder = False
+BreakRows = True
+```
