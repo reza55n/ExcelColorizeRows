@@ -51,8 +51,23 @@ Configuration:
 Cols = [{2}]
 
 UseColor = False
-    '...
-
 UseBorder = False
 BreakRows = True
+```
+
+
+## Example 3
+Page break preview:  
+![Colorize Sample 2](https://www.alvandsoft.com/files/excel_colorize3.png)
+
+(Also made cols 2 and 3 hidden) 
+
+Configuration:
+
+``` VBA
+Cols = [{2, 3}]
+
+UseColor = False
+BreakRows = True
+AddHeaderCols = True
 ```
