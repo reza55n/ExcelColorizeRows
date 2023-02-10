@@ -25,11 +25,12 @@ Now you can save your document as `Excel Macro-Enabled Workbook (*.xlsm)` format
 
 ## Configuration
 You can make some configurations by pressing `Alt+F11` (`Fn+F11` on Mac) and editing respective part of the code:
-- `HeaderRowsCount`: Number of rows at header to exclude from colorizing, default: `1`.
 - **`Cols`: For example, write `Cols = [{5, 6}]` to colorize based on columns 5 and 6 and write `Cols = [{1}]` to colorize only based on first column.**
-- `UseColor`, `UseBorder` (`True`/`False`): Restrict function of script, default: `True`.
+- `HeaderRowsCount`: Number of rows at the header to exclude from colorizing, default: `1`.
+- `UseColor`, `UseBorder` (`True`/`False`): Restrict function of the script, default: `True`.
 - `BreakRows` (`True`/`False`): Breaks page at columns' change, default: `False`.
-- `fixed`, `random` (Integer, total less than 256): Configure colorizing.
+- `AddHeaderCols` (`True`/`False`): Adds columns' caption at the beginning of each group, default: `False`.
+- `fixed`, `random`, `InANewRow`, `Delimiter`, `ChangeStyle`, `InCol`: Detailed configurations.
 
 
 ## Example 1
@@ -60,9 +61,7 @@ BreakRows = True
 Page break preview:  
 ![Colorize Sample 2](https://www.alvandsoft.com/files/excel_colorize3.png)
 
-(Also made cols 2 and 3 hidden) 
-
-Configuration:
+Configuration (Also made cols 2 and 3 hidden):
 
 ``` VBA
 Cols = [{2, 3}]
