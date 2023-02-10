@@ -3,7 +3,7 @@ Option Explicit
 Dim UseColor As Boolean, UseBorder As Boolean, BreakRows As Boolean, AddHeaderCols As Boolean
 Dim Cols(), LCols As Integer, UCols As Integer, HeaderRowsCount As Integer
 Dim fixed As Integer, random As Integer
-Dim InANewRow As Boolean, Delimiter As String, InCol As Integer
+Dim InANewRow As Boolean, Delimiter As String, ChangeStyle As Boolean, InCol As Integer
 
 Dim A As Range
 Dim i As Integer, j As Integer, k As Integer, isChanged As Boolean, headerData As String
@@ -15,27 +15,28 @@ Sub Colorize()
     Application.Calculation = xlCalculationManual
 
 
-    '###########################################
-    '############## Configuration ##############
+    '#############################################
+    '############### Configuration ###############
     
     Cols = [{1, 2}]
-    HeaderRowsCount = 1    ' Default: 1
+    HeaderRowsCount = 1      ' Default: 1
     
-    UseColor = True        ' Default: True
-        fixed = 150        ' Default: 150
-        random = 105       ' Default: 105
+    UseColor = True          ' Default: True
+        fixed = 150          ' Default: 150
+        random = 105         ' Default: 105
         'Total must be less than 256
     
-    UseBorder = True       ' Default: True
-    BreakRows = False      ' Default: False
+    UseBorder = True         ' Default: True
+    BreakRows = False        ' Default: False
     
-    AddHeaderCols = False  ' Default: False
-        InANewRow = False  ' Default: False
-        Delimiter = " - "  ' Default: " - "
-        InCol = -1         ' Default: -1 (auto)
+    AddHeaderCols = False    ' Default: False
+        InANewRow = True     ' Default: True
+        Delimiter = " - "    ' Default: " - "
+        ChangeStyle = True   ' Default: True
+        InCol = -1           ' Default: -1 (auto)
     
-    '###########################################
-    '###########################################
+    '#############################################
+    '#############################################
     
     
     ' Reason of using random colors: To keep it useful even if the data filtered or sorted differently
@@ -137,7 +138,6 @@ Function doAddHeaderRow(ByRef roww As Integer)
         
         If InANewRow Then
             A.Rows(k).Insert
-            A.Rows(k).Cells(1, InCol) = headerData
             If UseColor Then
                 A.Rows(k).Interior.Color = curColor
             End If
@@ -145,9 +145,12 @@ Function doAddHeaderRow(ByRef roww As Integer)
                 A.Rows(k).Borders(xlEdgeBottom).Weight = 2
             End If
             roww = k
-        
-        Else
-            A.Rows(k).Cells(1, InCol) = headerData
+        End If
+    
+        A.Rows(k).Cells(1, InCol) = headerData
+        If ChangeStyle Then
+            A.Rows(k).Cells(1, InCol).Font.Bold = True
+            A.Rows(k).Cells(1, InCol).Font.Size = A.Rows(k).Cells(1, InCol).Font.Size * 1.2
         End If
     End If
 End Function
